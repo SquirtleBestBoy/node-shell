@@ -1,8 +1,7 @@
 const request = require('request');
 
-module.exports = function (url) {
+module.exports = function (url,done) {
   request(url, function (error, response, body) {
-    process.stdout.write(body);
-    process.stdout.write('\nprompt > ');
+    done(body);
 });
 };
